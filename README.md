@@ -71,24 +71,28 @@ def isHappy(n):
 ### Commands Executed
 1. **Check OS Version**
    ```
-   docker exec ossp-container cat /etc/os-release
+   $ docker exec ossp-container cat /etc/os-release
    ```
-   **Result:** The container is running Ubuntu 24.04.1 LTS (Noble Numbat).
+> Explanation: This command runs cat /etc/os-release inside the ossp-container to display details about the operating system, such as its name, version, and release information.
+>> Result: The container is running Ubuntu 24.04.1 LTS (Noble Numbat).
 
 2. **Check Git Version**
    ```
-   docker exec ossp-container git --version
+   $ docker exec ossp-container git --version
    ```
-   **Result:** Git version 2.43.0.
+> Explanation: This command runs git --version inside the container to check the installed version of Git, which is useful for ensuring compatibility with version control processes.
+>> Result: Git version 2.43.0.
 
 3. **Check Python Version**
    ```
    docker exec ossp-container python3 --version
    ```
-   **Result:** Python 3.12.3.
+> Explanation: This command runs python3 --version inside the container to check the installed version of Python, which is important for running Python-based scripts and applications.
+>> Result: Python 3.12.3.
 
 4. **Check Container Bind Mounts**
    ```
    docker inspect --format="{{ .HostConfig.Binds }}" ossp-container
    ```
-   **Result:** Bind mount from host `/Users/moonsukim/Desktop/ossp_host_dir` to container `/mnt/ossp_container_dir`.
+> Explanation: This command uses docker inspect to check the bind mounts configured for the container. Bind mounts are used to share directories between the host and the container, allowing for persistent data storage and sharing files between environments.
+>> Result: Bind mount from host /Users/moonsukim/Desktop/ossp_host_dir to container /mnt/ossp_container_dir.
