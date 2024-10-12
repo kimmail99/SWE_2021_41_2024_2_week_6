@@ -85,14 +85,14 @@ def isHappy(n):
 
 3. **Check Python Version**
    ```
-   docker exec ossp-container python3 --version
+   $ docker exec ossp-container python3 --version
    ```
 > Explanation: This command runs python3 --version inside the container to check the installed version of Python, which is important for running Python-based scripts and applications.
 >> Result: Python 3.12.3.
 
 4. **Check Container Bind Mounts**
    ```
-   docker inspect --format="{{ .HostConfig.Binds }}" ossp-container
+   $ docker inspect --format="{{ .HostConfig.Binds }}" ossp-container
    ```
 > Explanation: This command uses docker inspect to check the bind mounts configured for the container. Bind mounts are used to share directories between the host and the container, allowing for persistent data storage and sharing files between environments.
 >> Result: Bind mount from host /Users/moonsukim/Desktop/ossp_host_dir to container /mnt/ossp_container_dir.
